@@ -5,6 +5,7 @@ const UsersRouter = require('./routers/UsersRouter')
 const app = express()
 
 const whiteList = [
+    "31.154.49.171",
     "http://einav-book-store.s3-website-eu-west-1.amazonaws.com/"
 ];
 
