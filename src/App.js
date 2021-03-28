@@ -11,5 +11,9 @@ app.use(cors())
 app.use(BooksRouter)
 app.use(UsersRouter)
 
+app.use("/", (req, res) => {
+    res.send("ok");
+});
+
 
 module.exports = app
