@@ -7,7 +7,7 @@ const app = express()
 require('./db/mongoose')
 
 app.use(express.json())
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(BooksRouter)
 app.use(UsersRouter)
 
