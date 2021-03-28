@@ -6,7 +6,7 @@ const app = express()
 
 const whiteList = [
     "http://localhost:3001",
-    //"https://git.heroku.com/arcane-hamlet-07739.git",
+    "http://einav-book-store.s3-website-eu-west-1.amazonaws.com/",
 ];
 
 const corsOptions = {
