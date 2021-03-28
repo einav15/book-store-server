@@ -5,8 +5,8 @@ const UsersRouter = require('./routers/UsersRouter')
 const app = express()
 
 const whiteList = [
-    "http://localhost:3000",
-    "https://git.heroku.com/arcane-hamlet-07739.git",
+    "http://localhost:3001",
+    //"https://git.heroku.com/arcane-hamlet-07739.git",
 ];
 
 const corsOptions = {
