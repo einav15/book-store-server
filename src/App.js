@@ -5,8 +5,7 @@ const UsersRouter = require('./routers/UsersRouter')
 const app = express()
 
 const whiteList = [
-    "http://localhost:3001",
-    "http://einav-book-store.s3-website-eu-west-1.amazonaws.com/",
+    "http://einav-book-store.s3-website-eu-west-1.amazonaws.com/"
 ];
 
 const corsOptions = {
