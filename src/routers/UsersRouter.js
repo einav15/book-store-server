@@ -55,15 +55,6 @@ router.patch('/users/update', auth, async (req, res) => {
     }
 })
 
-router.get('/users/me', auth, async (req, res) => {
-    try{
-        const user = req.user
-        res.send(user)
-    }catch(e){
-        res.status(404).send()
-    }
-})
-
 router.post('/users/logoutAll', auth, async (req, res) => {
     try {
         req.user.tokens = []
@@ -87,6 +78,7 @@ router.patch('/users/me', auth, async (req, res) => {
 })
 
 router.delete('/users/me', auth, async (req, res) => {
+    console.log(req.token)
     try {
         await req.user.remove()
         res.send(req.user)

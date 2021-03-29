@@ -25,7 +25,7 @@ const usersSchema = new mongoose.Schema({
         required: true,
         trim: true,
         validate(value) {
-            if (!validator.isStrongPassword(value, {minSymbols: 0}))
+            if (!validator.isStrongPassword(value, {minSymbols: 0, minLowercase: 0}))
                 throw new Error('Invalid Password')
         }
     },
@@ -52,6 +52,7 @@ usersSchema.methods.toJSON = function () {
 
     delete userObject.password
     delete userObject.tokens
+    delete userObject.avatar
 
     return userObject
 }
@@ -79,7 +80,6 @@ usersSchema.statics.findByCredentials = async (username, pass) => {
 
     return user
 }
-
 //hash password
 usersSchema.pre('save', async function (next) {
     const user = this
