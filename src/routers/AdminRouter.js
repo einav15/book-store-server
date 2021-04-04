@@ -18,7 +18,7 @@ router.post('/admin/new', async (req, res) => {
 
 router.post('/admin/login', async (req, res) => {
     try {
-        const user = await User.findByCredentials(req.query.username, req.query.password)
+        const user = await Admin.findByCredentials(req.query.username, req.query.password)
         const token = await user.generateAuthToken()
         res.send({ user, token })
     } catch (err) {
