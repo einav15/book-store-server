@@ -52,7 +52,7 @@ adminSchema.methods.generateAuthToken = async function () {
 
 //login
 adminSchema.statics.findByCredentials = async (username, pass) => {
-    const user = await User.findOne({ username })
+    const user = await Admin.findOne({ username })
     if (!user)
         throw new Error('Unable to login')
 
